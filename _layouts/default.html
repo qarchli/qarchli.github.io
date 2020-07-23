@@ -1,0 +1,12 @@
+---
+layout: base
+---
+{% if post && post.css %}
+    <link rel='stylesheet' type='text/css' href='/css/{{ post.css }}.css' />
+{% endif %}
+
+<div class="intro-header"></div>
+
+<div role="main" class="container">
+  {{ content }}
+</div>
