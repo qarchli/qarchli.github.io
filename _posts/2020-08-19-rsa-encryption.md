@@ -17,7 +17,7 @@ In this post, I will address a widely used cryptographic tool in the Internet ca
 
 I am going to begin by laying the groundwork necessary to understand how RSA works, starting with the mathematical principles underpinning it. Following that, I will walk you through a concrete example of the RSA algorithm in action. Lastly, I will reflect on why RSA works, and what are some of its vulnerabilities. At the end of this post, you will find a link to a Python demo I have written, whose code is available in my github repository.
 
-There are not any prerequisites to follow along with this post. I will walk you through the necessary mathematics in order for you to understand the RSA algorithm. However, I’m supposing that you are familiar with some arithmetic and algebra basics.
+There are no prerequisites to follow along with this post. I will walk you through the necessary mathematics in order for you to understand the RSA algorithm. However, I’m supposing that you are familiar with some arithmetic and algebra basics.
 
 ## Cryptography, Encryption, Symmetric vs Asymmetric ?
 
@@ -27,8 +27,8 @@ First things first, let's start with cryptography. It is *the practice and study
 
 Cryptographic methods can be split up in two main branches: symmetric and asymmetric methods. 
 
-- Symmetric encryption also called private-key encryption is the earliest known form of cryptography. It was first used by Julius Caesar to send secret messages throughout the Roman Empire. It was also used by the German army in WWII to transmit coded messages via the Enigma machine, later cracked by the British mathematician Alan Turing. Symmetric encryption uses the same shared key, referred to as the shared encryption key, for both encrypting the message by the sender and deciphering it back to plaintext by the receiver.
-- Asymmetric encryption also called public-key cryptography saves us from the need to share the same secret key between the communicating parties. Instead, we use two different but linked keys. One for encryption and the other for decryption.
+- **Symmetric encryption** also called **private-key encryption** is the earliest known form of cryptography. It was first used by Julius Caesar to send secret messages throughout the Roman Empire. It was also used by the German army in WWII to transmit coded messages via the Enigma machine, later cracked by the British mathematician Alan Turing. Symmetric encryption uses the same shared key, referred to as the shared encryption key, for both encrypting the message by the sender and deciphering it back to plaintext by the receiver.
+- **Asymmetric encryption** also called **public-key encryption** saves us from the need to share the same secret key between the communicating parties. Instead, we use two different but linked keys. One for encryption and the other for decryption.
 
 The RSA algorithm I am going to address in this post is an asymmetric encryption method.
 
@@ -68,15 +68,18 @@ o  Once the message has arrived to Bob, he has to use his private key as well as
 
 ### Prime numbers
 
-A prime is a number that is divisible only by itself and 1 (e.g. 2, 3, 5, 7, 11,). This is a [list](https://www.mathsisfun.com/numbers/prime-numbers-to-10k.html) of all prime numbers in the range 0 to 10.000.
+A prime is a number that is divisible only by itself and 1 (e.g. 2, 3, 5, 7, 11,). This is a [list](https://www.mathsisfun.com/numbers/prime-numbers-to-10k.html) of all prime numbers in the range 0 to 10.000. 
 
-How can we tell if a large number generated is a prime or not? Usually, when we are dealing with small integers, we run deterministic algorithms such as [AKS primality test](https://en.wikipedia.org/wiki/AKS_primality_test), but when it’s question of large numbers, we opt for probabilistic tests. This means that we determine whether an input integer is a prime given a certain probability. The commonly used algorithm is [Rabin-Miller primality test](https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test). 
+*How can we tell if a large number generated is a prime or not?* Usually, when we are dealing with small integers, we run deterministic algorithms such as [AKS primality test](https://en.wikipedia.org/wiki/AKS_primality_test). But when it’s a question of large numbers, we opt for probabilistic tests. This means that we determine whether an input integer is a prime given a certain probability. The commonly used algorithm is [Rabin-Miller primality test](https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test). 
 
-### Modular arithmetic:
+### Modular arithmetic
+
 
 $$
 \forall a, b, n \in \Z \quad a \equiv b \ mod (n) \Leftrightarrow \exists k \in \Z, a=b + k.n
 $$
+
+
 
 And we read, $a$ and $b$ are congruent modulo $n$.
 
@@ -84,9 +87,12 @@ And we read, $a$ and $b$ are congruent modulo $n$.
 
 ### Co-prime integers
 
+
 $$
 \forall a, b \in \Z \qquad a \text{ is relatively prime to } b \Leftrightarrow \text{gcd($a$, $b$)}=1
 $$
+
+
 
 Where <i>gcd</i> is the [greatest common divisor](https://en.wikipedia.org/wiki/Greatest_common_divisor) of $a$ and $b$.
 
@@ -94,7 +100,7 @@ Where <i>gcd</i> is the [greatest common divisor](https://en.wikipedia.org/wiki/
 
 Given an integer $N$, the $\phi$ function (pronounced phi) counts the positive integers less than $N$ that are relatively prime to it.
 
-For example, let's say we want to compute $\phi(N=9)$. This is the set of positive integers less than  :  $\{1, 2, 3, 4, 5, 6, 7, 8\}$. We can easily tell that the integers that are co-prime with $N=9$ are $\{1, 2, 4, 5, 7, 8\}$. This implies that $\phi(N=9)=6$.
+For example, let's say we want to compute $\phi(N=9)$. This is the set of positive integers less than $N$ :  $\{1, 2, 3, 4, 5, 6, 7, 8\}$. We can easily tell that the integers that are co-prime with $N=9$ are $\{1, 2, 4, 5, 7, 8\}$. This implies that $\phi(N=9)=6$.
 
 #### Properties of $\phi$
 
@@ -103,35 +109,54 @@ For example, let's say we want to compute $\phi(N=9)$. This is the set of positi
 Let’s take another example, this time with a prime number, $N=11$. The set of positive integers less than $N=11$ is: $\{1, 2, 3, 4, 5, 6, 7, 8, 9, 10\}$. All these integers are co-prime with $N$, implying that $\phi(N=9)=10$.
 
 From this example, the following conclusion can be drawn, and it’s a fundamental property of Euler’s totient function:
+
+
 $$
 \forall n \in \N \quad \text{if $n$ is a prime number then } \phi(n)=n-1
 $$
 
+
+
 ##### $\phi$ is a multiplicative function
+
 
 $$
 \forall p, q \in \Z \quad \phi(p.q)=\phi(p).\phi(q)
 $$
 
+
+
 If moreover $p$ and $q$ are prime numbers, then
+
+
 $$
 \phi(p.q)=(p-1).(q-1)
 $$
 
+
+
 ### Euler's theorem
 
 This is the fundamental theorem behind the RSA algorithm. It states that:
+
+
 $$
 \forall x, N \in \N \qquad \text{if gcd($x$, $N$)$=1$ then } x^{\phi(N)}\equiv1 \quad mod(n)
 $$
+
+
 This theorem can be demonstrated using [Fermat's little theorem](https://en.wikipedia.org/wiki/Fermat%27s_little_theorem).
 
 ### Modular multiplicative inverse
 
 The modular multiplicative inverse modulo $n$ of an integer $a$ is an integer $x$ such that:
+
+
 $$
 a.x \equiv 1 \quad mod(n)
 $$
+
+
 A necessary condition for an integer $a$ to have an inverse modulo $n$ is $\text{gcd($a$, $n$)$=1$}$.
 
 #### Methods to find an inverse modulo $n$ of an integer $a$:
@@ -139,6 +164,8 @@ A necessary condition for an integer $a$ to have an inverse modulo $n$ is $\text
 ##### The naive approach:
 
 As we saw earlier in the modular arithmetic definition, we can write the expression $a.x \equiv 1 \quad mod(n)$ differently:
+
+
 $$
 a.x \equiv 1 \quad mod(n) \Leftrightarrow \exists k \in \Z \text{ such that } a.x = 1 + k.n
 \\
@@ -148,6 +175,8 @@ a.x \equiv 1 \quad mod(n) \Leftrightarrow \exists k \in \Z \text{ such that } a.
 \\
 \Leftrightarrow a.x \quad mod(n)=1
 $$
+
+
 The naive approach is to try all numbers $x$ from $1$ to $(n-1)$ , and whenever $a.x \quad mod(n)=1$, we break and return $x$.
 
 Example:
@@ -175,6 +204,8 @@ Example:
 ##### Extended Euclidean Algorithm (EEA):
 
 A more sophisticated method to find a modular inverse is to make use of EEA. The EEA allows us, given two integers $a$ and $b$, to calculate $x$ and $y$, such that $a.x+b.y=\text{gcd($a$, $b$)}$. In order to meet our need, we have to customize this algorithm. We’re going to put: $b=n$, and given the necessary condition on the greatest common divisor, we have $\text{gcd($a$, $n$)$=1$}$. We end up with this equation:
+
+
 $$
 a.x+n.y=1 \Leftrightarrow a.x=1-n.y
 \\
@@ -182,6 +213,8 @@ a.x+n.y=1 \Leftrightarrow a.x=1-n.y
 \\
 \Leftrightarrow a.x \equiv 1 \quad mod(n)
 $$
+
+
 So the integer $x$ that we are going to find using EEA, with an input of two integers $a$ and $b$ such that $\text{gcd($a$, $n$)$=1$}$, is the multiplicative inverse modulo $n$ of $a$.
 
 ### Modular exponentiation
@@ -192,10 +225,14 @@ It is a type of exponentiation performed over a modulus. Given three integers:
 - an exponent $e$
 - a modulus $m$
 
-the modular exponentiation $c$ is defined as
+the modular exponentiation $c$ is defined as:
+
+
 $$
 c \equiv b^{e} \quad mod(m)
 $$
+
+
 #### Computation tools:
 
 ##### The Classical method:
@@ -205,11 +242,15 @@ In the classical method, we raise $b$ to the power $e$ and then reduce the whole
 ##### Repeated Squaring Method (RSM)
 
 It’s a more sophisticated and faster method. It takes advantage of **the multiplication property of modular arithmetic** which states:
+
+
 $$
 \text{Given three integers $a$, $b$ and $c$, we have:}
 \\
 (a.b) \quad mod(c) = [(a \ mod(c) ).(b \ mod(c) )] \ mod(c)
 $$
+
+
 This property can be proven using the [quotient remainder theorem](https://www.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/the-quotient-remainder-theorem). 
 
 So now that we’ve got our property, what’s next? We have to write the exponent as the sum of powers of $2$ by converting it to the binary system. Then take advantage of the fact that $x^{a+b}=x^{a}.x^{b}$. Let us see it in action with this example. Suppose we want to calculate $5^{355} \ mod(13)$.
@@ -218,16 +259,18 @@ So now that we’ve got our property, what’s next? We have to write the expone
 - Second, we have to write the exponent as the sum of powers of $2$. We will make use of the binary conversion (for each bit of the binary number, if it is set (equal to $1$) then it is equivalent to $2^k$ starting at the rightmost digit with $k=0$, and incrementing $k$ by $1$ each left move to the next digit): $355=2^8+2^6+2^5+2^1+2^0$
 
 Therefore: 
+
+
 $$
-\begin{align}
 5^{355} \ mod(13)=5^{2^8+2^6+2^5+2^1+2^0} \ mod (13)
-\\ = (5^{256}.5^{64}.5^{32}.5^{2}.5) \ mod(13)
-\\=[5^{256} \ mod(13).5^{64} \ mod(13).5^{32} \ mod(13) .5^{2} \ mod(13). 5 \ mod(13)] \ mod(13)
-\end{align}
+\\ \qquad \qquad \ \ \ \ \ \ = (5^{256}.5^{64}.5^{32}.5^{2}.5) \ mod(13)
+\\ \qquad \qquad \ \ \ \ \ \ =[5^{256} \ mod(13).5^{64} \ mod(13).5^{32} \ mod(13) .5^{2} \ mod(13). 5 \ mod(13)] \ mod(13)
 $$
+
+
 More on this method can be found [here](https://www.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/modular-multiplication).
 
-So that’s it. We’ve seen all the useful mathematics in order for us to understand the RSA algorithm. We’re ready and well-equipped to delve deeper into it.
+So that’s it. We have seen all the useful mathematics in order for us to understand the RSA algorithm. We are ready and well-equipped to delve deeper into it.
 
 ## RSA algorithm:
 
@@ -246,11 +289,15 @@ b. We compute $n=p.q=8383$; $n$ is called the **modulus** and it will constitute
 c. The totient of the modulus $n$ is $\phi(n)=(p-1).(q-1)=8200$; (Remember [Euler’s totient function properties](#$\phi$ of a prime number) discussed in previous sections);
 
 d. We select a random integer $e$ such that:
+
+
 $$
 1) \ 1<e<\phi(n)
 \\
 2) \ \text{gcd($e$, $\phi(n)$)$=1$}
 $$
+
+
 $e$ is called **the** **encryption exponent** and it will constitute the second component of the public key. Let $e=947$;
 
 e. Our public key is the pair $(e=947, n=8383)$;
@@ -260,10 +307,14 @@ e. Our public key is the pair $(e=947, n=8383)$;
 #### Private key
 
 a.   The first component of the private key is the inverse modulo $\phi(n)$ of *the encryption exponent* $e$. In other words, we have to find an integer $d$ such that:
+
+
 $$
 e.d \equiv 1 \quad mod(\phi(n))
 $$
-Since $\text{gcd($e$, $\phi(n)$)$=1$}$, the integer $d$ exists. In our case, we’re going to proceed using the naïve method, which gives us $d=7083$. $d$ is called **the decryption exponent**.
+
+
+Since $\text{gcd($e$, $\phi(n)$)$=1$}$, the integer $d$ exists and it is called **the decryption exponent**.. In our case, we are going to proceed using the naive method, which gives us $d=7083$.
 
 b. The second component of the private key is our modulus $n=8383$;
 
@@ -320,10 +371,16 @@ Here is a quick recap of what we have done so far:
 In what follows, I am going to demonstrate why RSA has worked, i.e. why $m'=m$.
 
 Let's start with the recovered message. We have:
+
+
 $$
 m' \equiv c^d \ mod(n) \Leftrightarrow m' \equiv m^{e.d} \ mod(n)
 $$
-Since $e.d \equiv 1 \ mod(\phi(n)$ (see [private key generation](#Private key)) then we can write: $e.d = 1 + k.\phi(n)$ with $k \in \Z$.
+
+
+Since $e.d \equiv 1 \ mod(\phi(n)$ (see [private key generation](#private-key)) then we can write: $e.d = 1 + k.\phi(n)$ with $k \in \Z$.
+
+
 $$
 m' \equiv m^{1 + k.\phi(n)} \ mod(n)
 \\
@@ -335,22 +392,32 @@ m' \equiv m^{1 + k.\phi(n)} \ mod(n)
 \\
 \Leftrightarrow m' \equiv m \ mod(n) \quad \text{(**)}
 $$
+
+
 For two main reasons that I will lay down and explain in what follows, the necessary condition under which the original message is well recovered (i.e. $m' = m$) is the following: $m \leq n$.
 
-The first reason has to do with the passage from the third to the fourth line **(\*).**  This passage is valid if and only if can we apply [Euler's theorem](#Euler's theorem). Let's see what we can do.
+The first reason has to do with the passage from the third to the fourth line **(\*).**  This passage is valid if and only if can we apply [Euler's theorem](#eulers-theorem). Let's see what we can do.
 
 Let $P$ be the proportion of numbers less than $n$ that are relatively prime to $n$. Since there are $n$ positive integers in the range $1$ to $n$, we are going to have:
+
+
 $$
-P = \frac{\phi(n)}{n}=\frac{\phi(p.q)}{pq}
+\quad \quad \quad \quad \quad \quad \quad P = \frac{\phi(n)}{n}=\frac{\phi(p.q)}{pq}
 \\
-\Leftrightarrow P = \frac{(p-1)(q-1)}{pq}= \frac{pq-p-q+1}{pq}
+\quad \quad \quad \quad \quad \quad \ \ \ \Leftrightarrow P = \frac{(p-1)(q-1)}{pq}= \frac{pq-p-q+1}{pq}
 \\
 \Leftrightarrow P = 1 - \frac{1}{q}- \frac{1}{p} + \frac{1}{pq}
 $$
+
+
 Now, let's calculate $\bar{P}$; the proportion of numbers less than $n$, that are **NOT** relatively prime to $n$.
+
+
 $$
 P + \bar{P} = 1 \Rightarrow \bar{P} = \frac{1}{q} + \frac{1}{p} - \frac{1}{pq}
 $$
+
+
 When $p$ and $q$ are large enough, which is always the case in practice, $\bar{P} \rightarrow 0$. Thus, choosing $m$ less than $n$ guarantees that $m$ is most likely prime to $n$. Meaning that Euler's theorem is applicable in the passage **(*)**, and the original message $m$ is well recovered. 
 
 The second reason has to do with the last line **(\**)**. Imagine that the conversion of plaintext to ASCII produces a number $m>n$. If we look at the decryption equation which is, I remind you, $m'=c^d \ mod(n)$ , we can tell that it will never produce a number $m'$ greater than $n$ because of the modulo $n$ operation, which is the Euclidean division remainder of $c^d$ by $n$. Since $m>n$ then $m'$ won’t be exactly equal to $m$ but merely congruent to $m \ \text{modulo }n$. To grasp this difference, take this example. $7 \neq 3$ but $7 \ mod(4)=3$. We say that $7$ and $3$ are not equal but are congruent $mod(4)$ (i.e. $7 \equiv 3 \ mod(4)$).
@@ -360,6 +427,8 @@ Thus recovering the original message in the last line requires $m \leq n$.
 To recap, the condition to put on plaintext conversion to numbers is $m \leq n$ . If it is not the case, then the message $m$ should be broken up into multiple blocks smaller than $n$, encrypt each block then, after decrypting, concatenate the blocks to form the original message $m$.
 
 **N.B:** I would particularly like to stress that co-primality of $m$ and $n$ is **NOT** a necessary condition in the passage **(*)**. Indeed, we can demonstrate that RSA will always work for every message $m$ in the range $0$ to $n-1$, whether it’s co-prime with $n$ or not. For this, we are going to introduce a new theorem called the **Chinese Remainder Theorem (CRT)**. It states that:
+
+
 $$
 \text{if $p$ and $q$ are co-prime and } 
    \begin{cases}
@@ -368,23 +437,30 @@ $$
     \end{cases}
 \\ \Leftrightarrow x \equiv y \ mod(pq)
 $$
+
+
 In RSA's case, we have $n=pq$. Since $p$ and $q$ are both prime but different numbers then they are co-prime. We can write:
+
+
 $$
-\begin{align}
  \begin{cases}
       c \equiv m^e \ mod(n) \\
       m' \equiv c^d \ mod(n)
-    \end{cases} \Leftrightarrow m' \equiv m^{ed} \ mod(p)
+ \end{cases} \Leftrightarrow m' \equiv m^{ed} \ mod(p)
     \\
-    \Leftrightarrow m' \equiv m^{ed} \ mod(p)
+  \quad \quad \quad \quad \quad \quad \quad \quad  \Leftrightarrow m' \equiv m^{ed} \ mod(p)
     \\
+    \quad \quad \quad \quad \quad \quad \quad \quad
     \Leftrightarrow m' \equiv m^{1+k.\phi(n)} \ mod(p)
     \\
+    \quad \quad \quad \quad \quad \quad \quad \quad
     \Leftrightarrow m' \equiv m^{1+k.(p-1)(q-1)} \ mod(p)
     \\
+    \quad \quad \quad \quad \quad \quad \quad \quad
     \Leftrightarrow m' \equiv m.(m^{\phi(p)})^{k.\phi(q)} \ mod(p)
-\end{align}
 $$
+
+
 If $m$ and $p$ were co-prime then we will be able to apply Euler’s theorem for $m$ and $p$ and have $m' \equiv m \ mod(p)$, otherwise, i.e. $m=kp \text{ with $k \in \Z$}$, then $m \equiv 0 \ mod(p)$ which trivially implies that $m' \equiv 0 \ mod(p)$, hence proving that $m' \equiv m \ mod(p)$. So we were able to prove that, given any message in the range $0$ to $n-1$, we are capable of encrypting it with the public key and decrypting it using the corresponding private key. However, as mentioned above, the chances that a given message $m$ less than $n$ is **NOT** relatively prime to $n$ are very very low.
 
 **Takeaway**: In the encryption phase, when converting the plaintext to numbers, make sure that every chunk converted is smaller than $n$.
