@@ -26,7 +26,7 @@ By the end of this article, you will be able to understand the basic concepts an
 The remainder of this article will be organized as follows:
 
 1. Background.
-2. GAs in action: Evolving a "Hello World" sentence.
+2. Genetic Algorithms in action: Evolving a "Hello World" sentence.
 3. Conclusion.
 4. References and further reading.
 
@@ -265,9 +265,10 @@ Also called, recombination, this operation aims to combine genetic information o
 Depending on the size of the parents, we can set up more than one random crossover point, and each time the same operation took place. This is called **Multi-Point Crossover**.
 
 <p align='center'>
-  <img src="/assets/genetic-algorithms/crossover_2.png"><br>
+  <img src="/assets/genetic-algorithms/crossover_2.PNG"><br>
     <em>Figure 4: Illustration of a multi-point crossover.</em>
 </p>
+
 
 #### 4.2 Mutation
 
@@ -376,7 +377,7 @@ def main():
     MAX_GEN = 100  # termination
     MAX_SUCCESS = 3  # termination
     NUM_ATTRIBUTES = len(target_sentence)
-    POPULATION_SIZE = 1000
+    POPULATION_SIZE = 500
     MUTATION_PROB = .01
     CROSSOVER_PROB = .75
 
