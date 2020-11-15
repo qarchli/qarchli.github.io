@@ -27,8 +27,8 @@ The remainder of this article will be organized as follows:
 
 1. Background.
 2. GAs in action: Evolving a "Hello World" sentence.
-3. Conclusion
-4. Resources and further reading
+3. Conclusion.
+4. References and further reading.
 
 ## Background
 
@@ -68,7 +68,7 @@ np.random.seed(seed)
 random.seed(seed)
 ```
 
-As depicted in the schema above, there are five main steps to implement a genetic algorithm. The first one is initializing the population.
+As depicted in the flowchart of *Figure 1*, there are five main steps to implement a genetic algorithm. The first one is initializing the population.
 
 ### 1. Initializing the population
 
@@ -265,7 +265,7 @@ Also called, recombination, this operation aims to combine genetic information o
 Depending on the size of the parents, we can set up more than one random crossover point, and each time the same operation took place. This is called **Multi-Point Crossover**.
 
 <p align='center'>
-  <img src="/assets/genetic-algorithms/crossover.png"><br>
+  <img src="/assets/genetic-algorithms/crossover_2.png"><br>
     <em>Figure 4: Illustration of a multi-point crossover.</em>
 </p>
 
