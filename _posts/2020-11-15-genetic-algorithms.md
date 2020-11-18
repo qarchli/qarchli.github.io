@@ -2,7 +2,8 @@
 css: github
 layout: post
 title: Genetic Algorithms
-image: /assets/genetic-algorithms/dna.jpg
+image: https://www.qarchli.github.io/assets/genetic-algorithms/dna.jpg
+share-img: https://www.qarchli.github.io/assets/genetic-algorithms/dna.jpg
 tags: [AI, evolutionary algorithms, mathematics, optimization]
 comments: true
 mathjax: true
