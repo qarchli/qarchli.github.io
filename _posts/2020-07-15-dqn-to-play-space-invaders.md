@@ -2,6 +2,8 @@
 css: github
 layout: post
 title: DQN to play Space Invaders
+image: /assets/dqn-on-space-invaders/invader.png
+share-img: /assets/dqn-on-space-invaders/invader.png
 gh-repo: qarchli/dqn-on-space-invaders
 gh-badge: [star, fork, follow]
 tags: [dqn, gym, atari, reinforcement learning]
