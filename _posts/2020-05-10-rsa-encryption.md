@@ -1,7 +1,11 @@
 ---
 css: github
 layout: post
-title: Encrypt it yourself! 
+title: Encrypt it yourself!
+image: /assets/rsa-encryption/encryption.png
+share-img: /assets/rsa-encryption/encryption.png
+gh-repo: qarchli/rsa-encryption
+gh-badge: [star, fork, follow]
 tags: [rsa, cryptography, encryption]
 comments: true
 mathjax: true
