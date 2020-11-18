@@ -2,7 +2,7 @@
 css: github
 layout: post
 title: Genetic Algorithms
-image: https:/assets/genetic-algorithms/dna.jpg
+image: /assets/genetic-algorithms/dna.jpg
 share-img: /assets/genetic-algorithms/dna.jpg
 tags: [AI, evolutionary algorithms, mathematics, optimization]
 comments: true

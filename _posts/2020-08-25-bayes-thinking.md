@@ -2,6 +2,8 @@
 css: github
 layout: post
 title: Bayesian thinking and the nature of learning
+image: /assets/bayes-thinking/bayesian_brain.jpg
+share-img: /assets/bayes-thinking/bayesian_brain.jpg
 tags: [bayes, probability, neuroscience]
 comments: true
 mathjax: true
