@@ -5,6 +5,8 @@ title: Genetic Algorithms
 image: /assets/genetic-algorithms/dna.jpg
 share-img: /assets/genetic-algorithms/dna.jpg
 tags: [AI, evolutionary algorithms, mathematics, optimization]
+gh-repo: qarchli/genetic-algorithms
+gh-badge: [star, fork, follow]
 comments: true
 mathjax: true
 ---
