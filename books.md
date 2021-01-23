@@ -53,10 +53,10 @@ title: Mouad Qarchli - My Book Recommendations
 			</div>
 			<div class="product">
 				<div class="product__info">
-					<img class="product__image" src="images/How_We_Learn.jpg" alt="How We Learn: Why Brains Learn Better Than Any Machine...for Now" />
-					<h3 class="product__title">How We Learn</h3>
-					<span class="product__author highlight"> Stanislas Dehaene</span>
-					<button class="action action--button" onclick="window.open('https://www.google.com/search?client=firefox-b-d&ei=ZYuUXrDaFKqOlwTNuYC4Bw&q=how+we+learn+stanislas+dehaene+review&oq=how+we+learn+stanislas+dehaene+review&gs_lcp=CgZwc3ktYWIQAzIECAAQEzoCCAA6BggAEBYQHjoFCAAQzQI6CAgAEBYQHhATSgkIFxIFMTItNTRKCAgYEgQxMi04ULYFWOQNYLYOaAFwAHgAgAFDiAGTA5IBATiYAQCgAQGqAQdnd3Mtd2l6&sclient=psy-ab&ved=0ahUKEwjwoIzg4eXoAhUqx4UKHc0cAHcQ4dUDCAs&uact=5')"><i class="fa fa-comments"></i><span class="action__text">Reviews</span></button>
+					<img class="product__image" src="images/Seven_And_A_Half_Lessons_About_The_Brain.jpg" alt="Seven and a Half Lessons About the Brain" />
+					<h3 class="product__title">Seven and a Half Lessons About the Brain</h3>
+					<span class="product__author highlight">Lisa Feldman Barrett</span>
+					<button class="action action--button" onclick="window.open('https://www.google.com/search?client=firefox-b-d&ei=M7UMYJ2qCKKPlwTuhJDIAg&q=seven+and+a+half+lessons+about+the+brain+review&oq=Seven_And_A_Half_Lessons_About_The_Brain+re&gs_lcp=CgZwc3ktYWIQARgAMgYIABAWEB46BAgAEB5Q5gNY5AVgugloAHAAeACAAZ0BiAHYA5IBAzIuMpgBAKABAaoBB2d3cy13aXrAAQE&sclient=psy-ab')"><i class="fa fa-comments"></i><span class="action__text">Reviews</span></button>
 				</div>
 			</div>
             <div class="product">
@@ -65,6 +65,14 @@ title: Mouad Qarchli - My Book Recommendations
 					<h3 class="product__title">The Predictive Mind</h3>
 					<span class="product__author highlight">Jakob Hohwy</span>
 					<button class="action action--button" onclick="window.open('https://www.google.com/search?client=firefox-b-d&bih=910&biw=1920&hl=fr&ei=Bk_7XpW8PJGvUvaHtOgG&q=the+predictive+mind+review&oq=the+predictive+mind+rev&gs_lcp=CgZwc3ktYWIQARgAMggIIRAWEB0QHjIICCEQFhAdEB4yCAghEBYQHRAeOgQIABATOggIABAWEB4QE1DtUFjQWWD7YGgAcAB4AIABWogBoQKSAQE0mAEAoAEBqgEHZ3dzLXdpeg&sclient=psy-ab')"><i class="fa fa-comments"></i><span class="action__text">Reviews</span></button>
+				</div>
+			</div>
+			<div class="product">
+				<div class="product__info">
+					<img class="product__image" src="images/The_Idea_Of_The_Brain.jpg" alt="The Idea of the Brain: The Past and Future of Neuroscience" />
+					<h3 class="product__title">The Idea of the Brain</h3>
+					<span class="product__author highlight">Matthew Cobb</span>
+					<button class="action action--button" onclick="window.open('https://www.google.com/search?client=firefox-b-d&ei=tbUMYM79ArCclwTVjbjABw&q=the+idea+of+the+brain+review&oq=The_Idea_Of_The_Brain+re&gs_lcp=CgZwc3ktYWIQARgAMgYIABAWEB4yBggAEBYQHjIGCAAQFhAeMgYIABAWEB46BAgAEB5Q3gNY-ARgmwhoAHAAeACAAUOIAfABkgEBNJgBAKABAaoBB2d3cy13aXrAAQE&sclient=psy-ab')"><i class="fa fa-comments"></i><span class="action__text">Reviews</span></button>
 				</div>
 			</div>
 		</section>
