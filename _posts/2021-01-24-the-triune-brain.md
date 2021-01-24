@@ -43,17 +43,19 @@ As it turns out, a thorough inspection of MacLean’s theory shows that it doesn
 In a recent paper called [Your Brain Is Not an Onion With a Tiny Reptile Inside](https://www.researchgate.net/publication/338154360_Your_Brain_Is_Not_an_Onion_with_a_Tiny_Reptile_Inside), published in 2020, the authors raise a point regarding this prevalent misconception in psychology that vertebrate animals have acquired newer complex brain structures on top of old ones through evolution, allowing them to acquire new and more complex psychological functions. This misconception the authors are debunking have its origins in the Triune Brain model of MacLean, which is apparently still a belief, widely shared by some psychologists and in most introductory textbooks, even if it has long been discredited among neurobiologists. By the way, if you have ever listened to some "self-help" or "motivational" speeches, you almost certainly have come across this wrong view of the brain. However, the authors of this paper described the more accurate model of neural evolution from a Darwinian standpoint.
 
 <p align='center'>
-  <img src="/assets/the-triune-brain/incorrect_evolution.png"><br>
+  <img src="/assets/the-triune-brain/incorrect_evolution.PNG"><br>
     <em>Figure 2: The incorrect view of Darwinian evolution. (<a href="https://www.researchgate.net/publication/338154360_Your_Brain_Is_Not_an_Onion_with_a_Tiny_Reptile_Inside">Source</a>)</em>
 </p>
+
 
 
 Given than primitive species are lacking outer and more recent brain structures, according to the Triune Brain model, the evolution of the different parts of the human brain happened linearly, as shown in (b). Thus, this model stipulates that the evolution of the different animals happened linearly as well (a), increasing gradually in complexity, which is an incorrect view of Darwinian evolution.
 
 <p align='center'>
-  <img src="/assets/the-triune-brain/correct_evolution.png"><br>
+  <img src="/assets/the-triune-brain/correct_evolution.PNG"><br>
     <em>Figure 3: The correct view of Darwinian evolution. (<a href="https://www.researchgate.net/publication/338154360_Your_Brain_Is_Not_an_Onion_with_a_Tiny_Reptile_Inside">Source</a>)</em>
 </p>
+
 
 
 The correct view of Darwinian evolution is shown in the evolutionary tree (c). It illustrates that indeed animals do evolve, but not in a linear increase of complexity. They evolve from a common ancestor. The coloring in the corresponding view of brain evolution (d) also illustrates that all vertebrates possess the same basic brain regions. These brain regions do differ in form and size from one species to another, but no new layers are being added on top of others over the course of evolution.
@@ -63,9 +65,10 @@ The key point to take away is that *just as species did not evolve linearly, nei
 #### Genetics standpoint
 
 <p align='center'>
-  <img src="/assets/the-triune-brain/human vs nonhuman brains.png"><br>
+  <img src="/assets/the-triune-brain/human vs nonhuman brains.PNG"><br>
     <em>Figure 4: Comparison between a human and a rat brain. (Adapted from <a href="https://www.drugabuse.gov/news-events/nida-notes/2017/03/why-are-our-brains-so-big-powerful">Source</a>)</em>
 </p>
+
 
 
 Back when Earth was ruled by creatures without brains, these creatures' simple bodies were managed by a handful of cells to act in and react to their environment. As creatures evolved more complex bodies, body-budgeting became a challenging task, especially as the Earth entered the Cambrian era where hunting starts being a thing. Creatures needed something more than a handful of budgeting cells to manage their bodies. *How can I avoid danger ? How am I going to know if it is time to grab a piece of food ? How am I going to remember that the last time I was in this particular place, it does not ended up well ?* Creatures expressed the need to answer this kind of questions. They needed a brain whose job is to ensure that resources were all regulated well to keep the body running efficiently and to prepare the body to react to any danger that may be threatening it. Therefore, as the body has evolved, the budgeting cells also evolved to become brains of greater complexity. The size, shape or neural densities may vary across species depending on the cranial capacity and the body that has to be managed. We can't fit a human brain into a rat cranium, and putting a rat brain into a human cranium is such a waste of space. One may then wonder where the difference between a rat brain and a human brain comes from? In any case, to the naked eye, the difference is obvious, isn't it ? Even more so if we compare what we as humans are capable of, compared to rats. Rats did not put their feet on the Moon nor build skyscrapers.
