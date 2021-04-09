@@ -75,5 +75,13 @@ title: Mouad Qarchli - My Book Recommendations
 					<button class="action action--button" onclick="window.open('https://www.google.com/search?client=firefox-b-d&ei=tbUMYM79ArCclwTVjbjABw&q=the+idea+of+the+brain+review&oq=The_Idea_Of_The_Brain+re&gs_lcp=CgZwc3ktYWIQARgAMgYIABAWEB4yBggAEBYQHjIGCAAQFhAeMgYIABAWEB46BAgAEB5Q3gNY-ARgmwhoAHAAeACAAUOIAfABkgEBNJgBAKABAaoBB2d3cy13aXrAAQE&sclient=psy-ab')"><i class="fa fa-comments"></i><span class="action__text">Reviews</span></button>
 				</div>
 			</div>
+			<div class="product">
+				<div class="product__info">
+					<img class="product__image" src="images/The_Forgetting_Machine.jpg" alt="The Forgetting Machine" />
+					<h3 class="product__title">The Forgetting Machine</h3>
+					<span class="product__author highlight">Rodrigo Quian Quiroga</span>
+					<button class="action action--button" onclick="window.open('https://www.google.com/search?q=the+forgetting+machine+reviews&source=lmns&bih=910&biw=1920&client=firefox-b-d&hl=fr&sa=X&ved=2ahUKEwjN07-hlvHvAhWh8IUKHcOqAHYQ_AUoAHoECAEQAA')"><i class="fa fa-comments"></i><span class="action__text">Reviews</span></button>
+				</div>
+			</div>	
 		</section>
 	</div>
